@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-aviator-red: #d31e1e;
+  --color-betpawa-green: #9cff00;
+}
+
+@layer base {
+  body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@layer components {
+  .btn-predict {
+    @apply relative overflow-hidden rounded-full bg-gradient-to-b from-[#b91c1c] to-[#7f1d1d] px-12 py-3 text-lg font-black tracking-widest text-white shadow-lg transition-all duration-200 active:scale-95;
+    box-shadow: 0 4px 0 #450a0a, 0 10px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-predict:active {
+    box-shadow: 0 2px 0 #450a0a, 0 5px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(2px);
+  }
+
+  .prediction-card {
+    @apply flex flex-col items-center justify-center rounded-[2rem] bg-[#1a1a1a] p-8 shadow-inner;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-panel {
+    @apply rounded-2xl bg-[#1e1e1e] border border-white/5 shadow-2xl;
+  }
+}
